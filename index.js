@@ -56,32 +56,39 @@ How many items were made by their sellers?
 
  items.forEach(object=>console.log(object.price));
 
- itemPrice=[]
+
+//Calculate the average price of all items.
  function itemsPrice(object) {
         return object.price
         }
- itemPrice=items.forEach(itemsPrice); ;
+ itemPrice=items.map(itemsPrice);
  console.log(itemPrice);
 
-      //data.forEach(object => console.log('age ', object.age));
-      //data.forEach(object => moreFemales(object))
+let totalPrice =items.reduce((total, object)=>total + object.price,0);
+let avgPrice= totalPrice/items.length;
 
-let total = 0;
-let totalPrice = itemPrice.reduce((total, object) => total + object.price);
-
-
-for (i = 0; i < items.length; i++) {
-  total += (totalPrice[i].price );
-}
-console.log(totalPrice);
+console.log(avgPrice);
 
 
 //Get an array of items that cost between $14.00 and $18.00 USD
-
-let itemCost=items.filter (object => object.price >=14 && object.price <=18);
-//let itemCost= [];
+let itemCost=items.filter (object => object.price >=14 && object.price <=18)
+.map(object=>object.title);
 
 console.log(itemCost);
+
+//Which item has a "GBP" currency code? Display its name and price.
+
+
+
+
+
+
+
+
+
+
+
+
 //itemCost.push(items[i])
 /*let teens = data.filter(object => object.age > 12 && object.age < 20);
 let teens = [];
