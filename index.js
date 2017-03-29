@@ -7,6 +7,7 @@ Get an array of items that cost between $14.00 and $18.00 USD
 Which item has a "GBP" currency code? Display its name and price.
 
 Display a list of all items which are made of wood. Hint materials
+-items.material.includes ("wood")
 
 Which items are made of eight or more materials?
 Display the name, number of items and the items it is made of.
@@ -51,27 +52,44 @@ How many items were made by their sellers?
 
 
 
-    console.log(items.length);
+ console.log(items.length);
 
  items.forEach(object=>console.log(object.price));
 
-itemPrice=[]
-
-
-    function itemsPrice(object) {
+ itemPrice=[]
+ function itemsPrice(object) {
         return object.price
         }
+ itemPrice=items.forEach(itemsPrice); ;
+ console.log(itemPrice);
 
       //data.forEach(object => console.log('age ', object.age));
       //data.forEach(object => moreFemales(object))
-    itemPrice=items.forEach(itemsPrice); ;
 
-    console.log(itemPrice)
+let total = 0;
+let totalPrice = itemPrice.reduce((total, object) => total + object.price);
 
 
-   let totalPrice = itemPrice.reduce((total, object) => total + object.price);
-let total=0;
-console.log(totalPrice)
+for (i = 0; i < items.length; i++) {
+  total += (totalPrice[i].price );
+}
+console.log(totalPrice);
+
+
+//Get an array of items that cost between $14.00 and $18.00 USD
+
+let itemCost=items.filter (object => object.price >=14 && object.price <=18);
+//let itemCost= [];
+
+console.log(itemCost);
+//itemCost.push(items[i])
+/*let teens = data.filter(object => object.age > 12 && object.age < 20);
+let teens = [];
+for (i = 0; i < data.length; i++) {
+  if (data[i].age > 12 && data[i].age < 20) {
+    teens.push(data[i]);
+
+
   /*  var numbers = [1, 2, 3, 4, 5],
         squares = []
 
