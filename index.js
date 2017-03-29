@@ -53,19 +53,62 @@ How many items were made by their sellers?
 
     console.log(items.length);
 
-    function genderRatio (object) {
-      return object.males / object.females;
-    }
-    //let ratios = data.map(genderRatio);
+ items.forEach(object=>console.log(object.price));
 
-    function eachPrice (object) {
-      return object.price/items.length;
+itemPrice=[]
+
+
+    function itemsPrice(object) {
+        return object.price
+        }
+
+      //data.forEach(object => console.log('age ', object.age));
+      //data.forEach(object => moreFemales(object))
+    itemPrice=items.forEach(itemsPrice); ;
+
+    console.log(itemPrice)
+
+
+   let totalPrice = itemPrice.reduce((total, object) => total + object.price);
+let total=0;
+console.log(totalPrice)
+  /*  var numbers = [1, 2, 3, 4, 5],
+        squares = []
+
+    function square(v) {
+        return v * v
+    }
+
+    squares = numbers.map(square)
+
+    console.log(numbers)
+    console.log(squares)
+
+    /*function moreFemales (object) {
+        if (object.females > object.males) {
+          console.log('more females of age ', object.age)
+        }
+      }
+      //data.forEach(object => console.log('age ', object.age));
+      //data.forEach(object => moreFemales(object))
+      data.forEach(moreFemales);
+
+      // what is the ratio of male:female in each year?
+      function genderRatio (object) {
+        return object.males / object.females;;
+*/
+
+
+  /*s  function eachPrice (object) {
+    return object.price {
+    console.log(object.price)
+    }
     }
     //let ratios = data.map(genderRatio);
-    let itemPrice = items.forEach(eachPrice);
+   items.forEach(eachPrice);
 console.log(itemPrice);
 /*console.log (itemPrice);*/
-let totalPrice = itemPrice.reduce((total, object) => total + object.price);
+/*let totalPrice = itemPrice.reduce((total, object) => total + object.price);
 let total = 0;
 console.log (totalPrice);
  /*function itemPrice (object) {
